@@ -1,7 +1,7 @@
 /*Remove Items from cart*/
 const removeCartItemButtons = document.getElementsByClassName('btn-danger');// This refences the remove button.
 // This is a for-loop to iterate through all the button with class 'btn-danger'
-    for(let i =0; i<removeCartItemButtons.length; i++ ){
+    for(let i = 0; i<removeCartItemButtons.length; i++ ){
 //the current button is assigned to a button variable
     let button = removeCartItemButtons[i]; 
  //this is an event listener that listens to a click event and execute the function
@@ -20,12 +20,16 @@ function updateCartTotal() {
     //target the cart-rows of the cart item conatiner
     let cartRows = cartItemContainer.document.getElementsByClassName('cart-row')
     //iterate through it.
-    for(let i =0; i<cartRows.length; i++ ){
+    for(let i = 0; i<cartRows.length; i++ ){
         //Target just one of the curent cartRows
         let cartRow = cartRows[i];
         // Target the price of same cart-row
         let priceElement = cartRow.document.getElementsByClassName('cart-price')[0]
         //Target the quantity of same cart-row
+        let quantityElement = cartRow.document.getElementsByClassName('cart-quantity-input')[0]
+        //Extract the main infromation from the element. As what is returned is usually the html element.
+        let price  = priceElement.innerText
+
     }
 }
 
