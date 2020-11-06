@@ -37,7 +37,7 @@ function updateCartTotal() {
         // The code below augments or accumulate the total of the product os quantity and price.
         total += (price * quantity);
     }
-    //update the total cost in the html file dinamically by targetting the first cart-total-price class
-    document.getElementsByClassName('cart-total-price')[0] = total
+    //update the total cost in the html file dinamically by targetting the first cart-total-price class and add the dollar sign. 
+    document.getElementsByClassName('cart-total-price')[0] = '$' + total;
 }
 
