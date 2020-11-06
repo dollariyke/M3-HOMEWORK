@@ -1,0 +1,50 @@
+body{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(226, 220, 220);
+}
+
+.main-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px solid black;
+}
+
+.mylist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+.list-item{
+    list-style-type: none;
+    margin: 10px 25px;
+    color: black;
+}
+.navlink{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+.container-fluid{
+    border: 1px solid red;
+    height: auto;
+}
+.mybooks{
+    height: 600px;
+    border: 1px solid yellow;
+    margin-top: 20px;
+   
+}
+
+.mycart{
+    border: 1px solid green;
+    height: 450px;
+    margin-top: 20px;
+}
