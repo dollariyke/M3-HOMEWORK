@@ -10,7 +10,7 @@
 
     <title>Online Bookshop</title>
     <link rel="stylesheet" href="/M3-D4.css">
-    <script src="/M3-D4.js"></script>
+    <script src="/M3-D4.js" async></script>
   </head>
 
   <!-- NAVIGATION-->
@@ -27,8 +27,18 @@
 
     <div class="container-fluid">
       <div class="row d-flex justify-content-around ">
+        <!-- Book library section-->
         <div class="col-sm-12 col-md-8 mybooks"></div>
-        <div class="col-sm-12 col-md-3 mycart"></div>
+
+        <!-- cart section-->
+        <div class="col-sm-12 col-md-4 cart-items text-center">
+          <h5 class="cart-header"> My Cart</h5>
+          <div class="cart-header-list d-flex justify-content-between">
+            <span class="cart-header-text">ITEM</span>
+            <span class="cart-header-text">PRICE</span>
+            <span class="cart-header-text">QUANTITY</span>
+          </div>
+        </div>
       </div>
     </div>
 
