@@ -20,6 +20,8 @@ function updateCartTotal() {
     //target the cart-rows of the cart item conatiner
     let cartRows = cartItemContainer.document.getElementsByClassName('cart-row')
     //iterate through it.
+    // declare a varable to hold the total price.
+    let total = 0;
     for(let i = 0; i<cartRows.length; i++ ){
         //Target just one of the curent cartRows
         let cartRow = cartRows[i];
@@ -27,9 +29,15 @@ function updateCartTotal() {
         let priceElement = cartRow.document.getElementsByClassName('cart-price')[0]
         //Target the quantity of same cart-row
         let quantityElement = cartRow.document.getElementsByClassName('cart-quantity-input')[0]
-        //Extract the main infromation from the element. As what is returned is usually the html element.
-        let price  = priceElement.innerText
+        //Extract the main information from the element. As what is returned is usually the html element. And also remove the dollar string.
+        let price  = priceElement.innerText.replace("$", '')
 
+        //Extract the quantity information from the element by targeting the value since it is and input element.
+        let quantity = quantityElement.value;
+        // The code below augments or accumulate the total of the product os quantity and price.
+        total += (price * quantity);
     }
+    //update the total cost in the html file dinamically by targetting the first cart-total-price class
+    document.getElementsByClassName('cart-total-price')[0] = total
 }
 
