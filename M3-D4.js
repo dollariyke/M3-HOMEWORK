@@ -1,6 +1,14 @@
+/* Make sure that your page is downloaded or downloading. Check the readystate to see if it is still loading and tell it what to do using if statement */
 
+if(document.readyState == "loading"){
+  document.addEventListener('DOMContentloaded', ready)
+}else{
+  ready()
+}
 
-/*Remove Items from cart*/
+// This is the code that will be run even if our page is not downloaded.
+function ready(){
+  /*Remove Items from cart*/
 const removeCartItemButtons = document.getElementsByClassName('btn-danger');// This refences the remove button.
 // This is a for-loop to iterate through all the button with class 'btn-danger'
     for(let i = 0; i<removeCartItemButtons.length; i++ ){
@@ -12,7 +20,10 @@ const removeCartItemButtons = document.getElementsByClassName('btn-danger');// T
     let buttonClicked = event.target;
     //The line of code below will target the immediate parent to the ancestors and apply the remove method to remove the element was clicked.
     buttonClicked.parentElement.parentElement.remove();
+    // This function runs next in order to update the cart as items are removed.
+     updateCartTotal();
  })
+}
 }
 //update cart total
 
@@ -42,3 +53,31 @@ function updateCartTotal() {
     //update the total cost in the html file dinamically by targetting the first cart-total-price class and add the dollar sign. 
     document.getElementsByClassName('cart-total-price')[0] = '$' + total;
 }
+
+
+/*
+function generateCards() {
+  fetch(" https://striveschool-api.herokuapp.com/books", {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((body) => {
+      let wrapper = document.getElementById("wrapper");
+      let newRow = document.createElement("div");
+      newRow.classList.add("row");
+      //newRow.classList.add("no-gutter");
+
+      for (let i = 0; i < body.length; i++) {
+        newRow.innerHTML += `<div class="card col-sm-3">
+      <img src="${body[i].img}" class="card-img-top image-fluid" alt="..." width ="100%" height='60%'>
+      <div class="card-body">
+          <h5 class="card-title">${body[i].title}</h5>
+          <p class="card-text">Price:${body[i].price}</p>
+          <a href="#" class="btn btn-primary mb-0">Add to cart</a>
+      </div>
+      </div>`;
+      }
+      wrapper.appendChild(newRow);
+    });
+}
+ */
