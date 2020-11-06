@@ -7,6 +7,7 @@ if(document.readyState == "loading"){
 }
 
 // This is the code that will be run even if our page is not downloaded.
+
 function ready(){
   /*Remove Items from cart*/
 const removeCartItemButtons = document.getElementsByClassName('btn-danger');// This refences the remove button.
@@ -15,16 +16,21 @@ const removeCartItemButtons = document.getElementsByClassName('btn-danger');// T
 //the current button is assigned to a button variable
     let button = removeCartItemButtons[i]; 
  //this is an event listener that listens to a click event and execute the function
-    button.addEventListener('click',function(event){
-    /* this event listener has an event object as a parameter in which we can explore its target property.The target property helps us identify the particular button clicked and assigned to a variable called 'buttonClicked'*/
-    let buttonClicked = event.target;
-    //The line of code below will target the immediate parent to the ancestors and apply the remove method to remove the element was clicked.
-    buttonClicked.parentElement.parentElement.remove();
-    // This function runs next in order to update the cart as items are removed.
-     updateCartTotal();
- })
+    button.addEventListener('click',removeCartItem
+ )
 }
 }
+
+//removeCartItem function
+function removeCartItem (event){
+    /* this has an event object as a parameter in which we can explore its target property.The target property helps us identify the particular button clicked and assigned to a variable called 'buttonClicked'*/
+  let buttonClicked = event.target;
+  //The line of code below will target the immediate parent up to the ancestors and apply the remove method to remove the clicked element.
+  buttonClicked.parentElement.parentElement.remove();
+  // This function runs next in order to update the cart as items are removed.
+   updateCartTotal();
+}
+
 //update cart total
 
 function updateCartTotal() {
