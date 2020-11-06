@@ -1,36 +1,27 @@
-/* Make sure that your page is downloaded or downloading. Check the readystate to see if it is still loading and tell it what to do using if statement */
+// check if the document is still loading
 
-if(document.readyState == "loading"){
-  document.addEventListener('DOMContentloaded', ready)
-}else{
-  ready()
-}
 
-// This is the code that will be run even if our page is not downloaded.
+/*Remove Items from cart*/
+// This refences the remove button.
+const removeCartItemButtons = document.getElementsByClassName('btn-danger');
 
-function ready(){
-  /*Remove Items from cart*/
-const removeCartItemButtons = document.getElementsByClassName('btn-danger');// This refences the remove button.
 // This is a for-loop to iterate through all the button with class 'btn-danger'
     for(let i = 0; i<removeCartItemButtons.length; i++ ){
+
 //the current button is assigned to a button variable
     let button = removeCartItemButtons[i]; 
+
  //this is an event listener that listens to a click event and execute the function
-    button.addEventListener('click',removeCartItem
- )
-}
-}
+    button.addEventListener('click',function(event){
 
-//removeCartItem function
-function removeCartItem (event){
-    /* this has an event object as a parameter in which we can explore its target property.The target property helps us identify the particular button clicked and assigned to a variable called 'buttonClicked'*/
-  let buttonClicked = event.target;
-  //The line of code below will target the immediate parent up to the ancestors and apply the remove method to remove the clicked element.
-  buttonClicked.parentElement.parentElement.remove();
-  // This function runs next in order to update the cart as items are removed.
-   updateCartTotal();
-}
+    /* this event listener has an event object as a parameter in which we can explore its target property.The target property helps us identify the particular button clicked and assigned to a variable called 'buttonClicked'*/
 
+    let buttonClicked = event.target;
+    //The line of code below will target the immediate parent to the ancestors and apply the remove method to remove the element was clicked.
+    
+    buttonClicked.parentElement.parentElement.remove();
+ })
+}
 //update cart total
 
 function updateCartTotal() {
@@ -60,30 +51,3 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price')[0] = '$' + total;
 }
 
-
-/*
-function generateCards() {
-  fetch(" https://striveschool-api.herokuapp.com/books", {
-    method: "GET",
-  })
-    .then((response) => response.json())
-    .then((body) => {
-      let wrapper = document.getElementById("wrapper");
-      let newRow = document.createElement("div");
-      newRow.classList.add("row");
-      //newRow.classList.add("no-gutter");
-
-      for (let i = 0; i < body.length; i++) {
-        newRow.innerHTML += `<div class="card col-sm-3">
-      <img src="${body[i].img}" class="card-img-top image-fluid" alt="..." width ="100%" height='60%'>
-      <div class="card-body">
-          <h5 class="card-title">${body[i].title}</h5>
-          <p class="card-text">Price:${body[i].price}</p>
-          <a href="#" class="btn btn-primary mb-0">Add to cart</a>
-      </div>
-      </div>`;
-      }
-      wrapper.appendChild(newRow);
-    });
-}
- */
