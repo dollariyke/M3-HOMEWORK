@@ -17,5 +17,15 @@ const removeCartItemButtons = document.getElementsByClassName('btn-danger');// T
 function updateCartTotal() {
     // target the first cart item container
     let cartItemContainer = document.getElementsByClassName('cart-items')[0];
+    //target the cart-rows of the cart item conatiner
+    let cartRows = cartItemContainer.document.getElementsByClassName('cart-row')
+    //iterate through it.
+    for(let i =0; i<cartRows.length; i++ ){
+        //Target just one of the curent cartRows
+        let cartRow = cartRows[i];
+        // Target the price of same cart-row
+        let priceElement = cartRow.document.getElementsByClassName('cart-price')[0]
+        //Target the quantity of same cart-row
+    }
 }
 
