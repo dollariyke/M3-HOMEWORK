@@ -43,8 +43,17 @@ body{
    
 }
 
-.mycart{
+.cart-items{
     border: 1px solid green;
     height: 450px;
     margin-top: 20px;
+}
+
+.cart-header-list{
+    padding: 5px;
+}
+.cart-header-text{
+    font-size: 80%;
+    font-weight: 700;
+    border-bottom:1px solid  red;
 }
