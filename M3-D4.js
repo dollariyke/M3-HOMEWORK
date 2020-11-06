@@ -1,27 +1,40 @@
 // check if the document is still loading
-
+if(document.readyState == 'loading'){
+    document.addEventListener('DOMContentloaded', ready)
+}else{
+    ready();
+}
 
 /*Remove Items from cart*/
 // This refences the remove button.
-const removeCartItemButtons = document.getElementsByClassName('btn-danger');
 
-// This is a for-loop to iterate through all the button with class 'btn-danger'
-    for(let i = 0; i<removeCartItemButtons.length; i++ ){
+function ready(){
+    const removeCartItemButtons = document.getElementsByClassName('btn-danger');
 
-//the current button is assigned to a button variable
-    let button = removeCartItemButtons[i]; 
-
- //this is an event listener that listens to a click event and execute the function
-    button.addEventListener('click',function(event){
-
-    /* this event listener has an event object as a parameter in which we can explore its target property.The target property helps us identify the particular button clicked and assigned to a variable called 'buttonClicked'*/
-
-    let buttonClicked = event.target;
-    //The line of code below will target the immediate parent to the ancestors and apply the remove method to remove the element was clicked.
+    // This is a for-loop to iterate through all the button with class 'btn-danger'
+        for(let i = 0; i<removeCartItemButtons.length; i++ ){
     
-    buttonClicked.parentElement.parentElement.remove();
- })
+    //the current button is assigned to a button variable
+        let button = removeCartItemButtons[i]; 
+    
+     //this is an event listener that listens to a click event and execute the function
+        button.addEventListener('click',removeCartItem)
+    }
 }
+
+// Create the removeCartItem Function
+ function removeCartItem(event)
+        {   
+        /* this function takes an event object as a parameter in which we can explore its target property.The target property helps us identify the particular button clicked and assigned to a variable called 'buttonClicked'*/
+    
+        let buttonClicked = event.target;
+        //The line of code below will target the immediate parent to the ancestors and apply the remove method to remove the element was clicked.
+        
+        buttonClicked.parentElement.parentElement.remove();
+        updateCartTotal();
+        }
+
+
 //update cart total
 
 function updateCartTotal() {
