@@ -1,3 +1,5 @@
+
+
 /*Remove Items from cart*/
 const removeCartItemButtons = document.getElementsByClassName('btn-danger');// This refences the remove button.
 // This is a for-loop to iterate through all the button with class 'btn-danger'
@@ -40,4 +42,3 @@ function updateCartTotal() {
     //update the total cost in the html file dinamically by targetting the first cart-total-price class and add the dollar sign. 
     document.getElementsByClassName('cart-total-price')[0] = '$' + total;
 }
-
