@@ -32,7 +32,6 @@ function removeCartItem (event){
 }
 
 //update cart total
-
 function updateCartTotal() {
     // target the first cart item container
     let cartItemContainer = document.getElementsByClassName('cart-items')[0];
