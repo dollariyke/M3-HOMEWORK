@@ -37,17 +37,29 @@
     <div class="container-fluid">
       <div class="row d-flex justify-content-around">
         <!-- Book library section-->
-        <div class="col-sm-12 col-md-8 mybooks"></div>
-
+        <section class="col-sm-12 col-md-8 content-section">
+          <h2 class="section-header text-center">Books</h2>
+          <div class="row" id="myrow"></div>
+        </section>
         <!-- cart section-->
-        <div class="col-sm-12 col-md-4 cart-items text-center">
-          <h5 class="cart-header">My Cart</h5>
-          <div class="cart-header-list d-flex justify-content-between">
-            <span class="cart-header-text">ITEM</span>
-            <span class="cart-header-text">PRICE</span>
-            <span class="cart-header-text">QUANTITY</span>
+        <section class="col-sm-12 col-md-4 cart-items cart-section">
+          <h5 class="section-header text-center">CART</h5>
+          <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
           </div>
-        </div>
+
+          <div class="cart-items cart-column"></div>
+
+          <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0</span>
+          </div>
+          <button class="btn btn-primary btn-purchase" type="button">
+            PURCHASE
+          </button>
+        </section>
       </div>
     </div>
 
