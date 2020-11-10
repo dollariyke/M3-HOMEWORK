@@ -74,12 +74,9 @@
       </div>
 
       <div class="row d-flex justify-content-center">
-        <h4 >User Details</h4>
-
+        <h4>User Details</h4>
       </div>
-
-
-      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -94,7 +91,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
-       /* fetch('https://jsonplaceholder.typicode.com/users ',{
+      /* fetch('https://jsonplaceholder.typicode.com/users ',{
           method:'GET'
         }).then((response) => response.json())
         .then((body) =>{
@@ -115,18 +112,19 @@
           }
           console.log(row)
         })*/
-       
-        async function myFetch(){
-         let response = await fetch('https://jsonplaceholder.typicode.com/users ',{
-          method:'GET'
-        });
-        let body = await response.json();
-        return
 
-          let row = document.getElementsByClassName('row')[0];
-          for(let i = 0;i <body.length ; i++)
+      async function myFetch() {
+        let response = await fetch(
+          "https://jsonplaceholder.typicode.com/users ",
           {
-          let myBody =body[i];
+            method: "GET",
+          }
+        );
+        let body = await response.json();
+        let row = document.getElementsByClassName("row")[0];
+        let select = document.getElementsByClassName("custom-select")[0];
+        for (let i = 0; i < body.length; i++) {
+          let myBody = body[i];
           row.innerHTML += ` <div class="col-12 mb-3 user-details">
           <div class="id"><p>Id:${myBody.id}</p></div>
           <div class="name"><p><strong>Name:</strong>${myBody.name}</p></div>
@@ -137,13 +135,10 @@
           <div class="website"><p><strong>Website:</strong>${myBody.website}</p></div>
           <div class="company"><p><strong>Company:</strong>${myBody.company.name}</p></div>
         </div>`;
-          }
-          console.log
-        
-
         }
-
-
+        console.log;
+      }
+      myFetch();
     </script>
   </body>
 </html>
