@@ -1,9 +1,13 @@
 .searchName {
   display: inline;
+  margin-top: 8px;
   font: 1rem "Fira Sans", sans-serif;
 }
 
-input,
-.searchName {
+input {
   margin: 0.4rem 0;
+}
+input#site-search {
+  margin: 0;
+  padding: 5px;
 }
