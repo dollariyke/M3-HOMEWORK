@@ -15,7 +15,7 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="./style.css">
     <title>My site</title>
     <!--
           
@@ -86,20 +86,9 @@
     <h1 class="text center">My site for CRUD</h1>
 
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-3" id="card-container">
-          <!-- <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div> -->
-        </div>
+      <div class="row" id="card-container">
+        
+       
       </div>
     </div>
 
@@ -131,17 +120,17 @@
           console.log(data);
           if (data.length > 0) {
             data.forEach((e) => {
-              wrapper.innerHTML += `<div class="card">
-            <img src="${e.imageUrl}" class="card-img-top image-fluid" alt="..." />
+              wrapper.innerHTML += `<div class="col-md-3"><div class="card">
+            <img src=${e.imageUrl} class="card-img-top image-fluid" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">"${e.brand}"</h5>
+              <h5 class="card-title">${e.brand}</h5>
               <p class="card-text">
-              "${e.description}" 
+              ${e.description} 
               </p>
               <a href="#" class="btn btn-primary">EDIT</a>
               <a href="#" class="btn btn-primary">DELETE</a>
             </div>
-          </div>`;
+          </div> </div>`;
             });
           } else {
             wrapper.innerHTML = "<h1> No products for now</h1>";
