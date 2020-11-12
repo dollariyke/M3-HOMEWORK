@@ -117,15 +117,15 @@
           console.log(data);
           if (data.length > 0) {
             data.forEach((e) => {
-              wrapper.innerHTML += `<div class="col-md-3"><div class="card">
+              wrapper.innerHTML += `<div class="col-md-3" id="card-con"><div class="card">
             <img src=${e.imageUrl} class="card-img-top image-fluid" alt="..." />
             <div class="card-body">
-              <h5 class="card-title">${e.brand}</h5>
+              <h6 class="card-title">${e.brand}</h6>
               <p class="card-text">
               ${e.description} 
               </p>
               <div class="bottom-details d-flex justify-content-between">
-              <span>${e.price}$</span> 
+              <span class="card-text">USD${e.price}</span> 
               <a href="#" class="btn btn-success">EDIT</a>
               </div>
             </div>
