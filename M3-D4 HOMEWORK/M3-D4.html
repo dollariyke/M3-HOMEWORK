@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      class="navlink"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+
+    <title>Online Bookshop</title>
+    <link rel="stylesheet" href="/M3-D4.css" />
+    <script src="/M3-D4.js" async></script>
+  </head>
+
+  <!-- NAVIGATION-->
+  <body>
+    <header class="main-header">
+      <nav class="nav mynav">
+        <ul class="mylist">
+          <li class="list-item"><a class="navlink" href="">HOME</a></li>
+          <li class="list-item"><a class="navlink" href="">STORE</a></li>
+          <li class="list-item"><a class="navlink" href="">ABOUT US</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row d-flex justify-content-around">
+        <!-- Book library section-->
+        <section class="col-sm-12 col-md-8 content-section">
+          <h2 class="section-header text-center">Books</h2>
+          <div class="row" id="myrow"></div>
+        </section>
+        <!-- cart section-->
+        <section class="col-sm-12 col-md-4 cart-items cart-section">
+          <h5 class="section-header text-center">CART</h5>
+          <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+          </div>
+
+          <div class="cart-items cart-column"></div>
+
+          <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0</span>
+          </div>
+          <button class="btn btn-primary btn-purchase" type="button">
+            PURCHASE
+          </button>
+        </section>
+      </div>
+    </div>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+<!--
+   
+            You are creating the "shopping cart experience" for a Online Marketplace.
+            You have the list of the available books from the current API:
+            https://striveschool-api.herokuapp.com/books
+            What you have to do is:
+            0) Get all the products from the API using a fetch
+            1) Display the list of items available on the page using template literals `` and .forEach
+            2) Add a "add to cart button"
+            3) When the button is pressed, change the style of the item and add it to another list
+            4) Add "skip" button next to each item
+            5) When pressed, the button should remove from the page the item not interesting from the user
+            6) Add a "search bar". When the user types more than 3 chars, you should filter the content of the page to show only the items with a matching name (hint: use .filter method)
+            7) Allow the user to delete items from the cart list
+            
+            [EXTRA]
+            8) Add a "clean cart" button, to clean the whole list.
+            9) Create a second "detail page" for the product. When the user clicks on a product name, the app should redirect him to the secondary page, passing the ASIN in query string
+            10) In page "detail" show some details of the selected product
+        
+-->
