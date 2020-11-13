@@ -20,3 +20,10 @@ h6{
  #card-con{
      margin-bottom: 15px;
  }
+
+ .update-button{
+     display: flex;
+     margin: 0px;
+     justify-content: space-between;
+     
+ }
