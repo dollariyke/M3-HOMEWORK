@@ -118,9 +118,8 @@ window.onload = async ()=>{
             headers: new Headers({
                 // we need also to declare the content type
                 Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFkMjNmMmFkOGMzODAwMTc1YTMwNTAiLCJpYXQiOjE2MDUxODI0NTAsImV4cCI6MTYwNjM5MjA1MH0.4ORCkz8hmg1iguLxpA8mc8bmydX1CP6SCPkSXhMm8j4",
-        
-                "Content-Type": "application/json",
+                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFkMjNmMmFkOGMzODAwMTc1YTMwNTAiLCJpYXQiOjE2MDUxODI0NTAsImV4cCI6MTYwNjM5MjA1MH0.4ORCkz8hmg1iguLxpA8mc8bmydX1CP6SCPkSXhMm8j4"       
+              
               })
         })
         let data = await response.json();
@@ -152,14 +151,12 @@ const handleDelete = async ()=>{
             headers: new Headers({
                 // we need also to declare the content type
                 Authorization:
-                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFkMjNmMmFkOGMzODAwMTc1YTMwNTAiLCJpYXQiOjE2MDUxODI0NTAsImV4cCI6MTYwNjM5MjA1MH0.4ORCkz8hmg1iguLxpA8mc8bmydX1CP6SCPkSXhMm8j4",
-        
-                "Content-Type": "application/json",
-              })
+                  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFkMjNmMmFkOGMzODAwMTc1YTMwNTAiLCJpYXQiOjE2MDUxODI0NTAsImV4cCI6MTYwNjM5MjA1MH0.4ORCkz8hmg1iguLxpA8mc8bmydX1CP6SCPkSXhMm8j4" })
 
         });
         if(response.ok){
             alert("Product successfully deleted");
+            location.assign("index.html");
         }else{
             alert("something went wrong")
         }
@@ -170,8 +167,8 @@ const handleDelete = async ()=>{
 
 }
 
-const handleEdit = async ()=>{
-location.href = "backoffice.html?=" + id;
+const handleEdit = ()=>{
+location.href = "backoffice.html?id=" + id;
 };
 </script>
 
